@@ -1,0 +1,4 @@
+name: HomeListGPT
+version: '${project.version}'
+main: xyz.housers.homelistgpt.HomelistGPT
+api-version: 1.20
