@@ -24,6 +24,7 @@ public class HomelistGPT extends JavaPlugin {
 // FIX THIS cannot cast listener to 'this'
         getServer().getPluginManager().registerEvents((Listener) this, this);
 
+
         getCommand("sethome").setExecutor(new SetHomeCommand(this, homes, maxHomes));
         getCommand("home").setExecutor(new HomeCommand(homes));
     }
