@@ -14,7 +14,6 @@ import java.util.Map;
 
 public class HomelistGPT extends JavaPlugin {
     private final Map<String, Location> homes = new HashMap<>();
-    private final int maxHomes = 5;
     private FileConfiguration config;
 
     @Override
@@ -22,9 +21,10 @@ public class HomelistGPT extends JavaPlugin {
         config = getConfig();
         loadHomes();
 // FIX THIS cannot cast listener to 'this'
-        getServer().getPluginManager().registerEvents((Listener) this, this);
+        //getServer().getPluginManager().registerEvents((Listener) this, this);
 
 
+        int maxHomes = 5;
         getCommand("sethome").setExecutor(new SetHomeCommand(this, homes, maxHomes));
         getCommand("home").setExecutor(new HomeCommand(homes));
     }

@@ -2,3 +2,9 @@ name: HomeListGPT
 version: '${project.version}'
 main: xyz.housers.homelistgpt.HomelistGPT
 api-version: 1.20
+commands:
+  home:
+    description: Teleports you home.
+  sethome:
+    description: used to set home and view your homes
+    usage: /sethome name|list
