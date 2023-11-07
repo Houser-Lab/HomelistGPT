@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HomelistGPT extends JavaPlugin {
-    private final Map<String, Location> homes = new HashMap<>();
+    public static final Map<String, Location> homes = new HashMap<>();
     private FileConfiguration config;
 
     @Override

@@ -23,6 +23,10 @@ public class HomeListGUI {
             ItemMeta itemMeta = homeItem.getItemMeta();
             itemMeta.setDisplayName(homeName);
             itemMeta.setLore(List.of("X: " + homeLocation.getBlockX(), "Y: " + homeLocation.getBlockY(), "Z: " + homeLocation.getBlockZ()));
+
+            //player.setCompassTarget(homeLocation);
+            // I played around with using this, but it can not be customized per compass and overrides with the last home that was loaded
+
             homeItem.setItemMeta(itemMeta);
 
             gui.addItem(homeItem);

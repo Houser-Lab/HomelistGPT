@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import xyz.housers.homelistgpt.HomelistGPT;
+import xyz.housers.homelistgpt.HomeListGUI;
 
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class HomeCommand implements CommandExecutor {
         if (args.length == 1 && args[0].equalsIgnoreCase("list")) {
             // The player has used "/home list" command
 
-            // Open a GUI for displaying the list of homes (not implemented here)
+            xyz.housers.homelistgpt.HomeListGUI.openHomeList(player, xyz.housers.homelistgpt.HomelistGPT.homes);
             player.sendMessage("Opening home list GUI...");
 
             return true; // Exit the command execution
