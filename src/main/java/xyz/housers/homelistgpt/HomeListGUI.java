@@ -3,6 +3,7 @@ package xyz.housers.homelistgpt;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -32,11 +33,26 @@ public class HomeListGUI {
             gui.addItem(homeItem);
         }
 
+        // Anvil
         ItemStack customizeItem = new ItemStack(Material.ANVIL);
         ItemMeta customizeMeta = customizeItem.getItemMeta();
         customizeMeta.setDisplayName("Customize");
         customizeItem.setItemMeta(customizeMeta);
         gui.setItem(26, customizeItem);
+
+
+        // Green Glass
+        ItemStack greenGlass = new ItemStack(Material.GREEN_STAINED_GLASS_PANE);
+        ItemMeta greenGlassMeta = greenGlass.getItemMeta();
+        greenGlassMeta.setDisplayName(" ");
+        greenGlass.setItemMeta(greenGlassMeta);
+
+        for (int slot = 0; slot < gui.getSize(); slot++) {
+            ItemStack indexSlot = gui.getItem(slot);
+            if (indexSlot == null) {
+               gui.setItem(slot, greenGlass);
+            }
+        }
 
         player.openInventory(gui);
     }
