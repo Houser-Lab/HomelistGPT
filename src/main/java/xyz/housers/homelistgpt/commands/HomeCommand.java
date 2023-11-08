@@ -65,5 +65,6 @@ public class HomeCommand implements CommandExecutor {
         player.sendMessage("Teleported to home '" + homeName + "'.");
 
         return true; // Exit the command execution
+
     }
 }
