@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import xyz.housers.homelistgpt.commands.SetHomeCommand;
 import xyz.housers.homelistgpt.commands.HomeCommand;
 import xyz.housers.homelistgpt.HomeListGUI;
+import xyz.housers.homelistgpt.handlers.ClickHandler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class HomelistGPT extends JavaPlugin {
 // FIX THIS cannot cast listener to 'this'
         //getServer().getPluginManager().registerEvents((Listener) this, this);
 
+        new ClickHandler(this);
 
         int maxHomes = 5;
         getCommand("sethome").setExecutor(new SetHomeCommand(this, homes, maxHomes));

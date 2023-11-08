@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class HomeListGUI {
     public static void openHomeList(Player player, Map<String, Location> homes) {
-        Inventory gui = Bukkit.createInventory(null, 27, "Home List");
+        Inventory gui = Bukkit.createInventory(null, 27, "Homes List");
 
         for (Map.Entry<String, Location> entry : homes.entrySet()) {
             String homeName = entry.getKey();
@@ -39,5 +39,20 @@ public class HomeListGUI {
         gui.setItem(26, customizeItem);
 
         player.openInventory(gui);
+    }
+
+    public static void changeBlock(Inventory gui, Material currentMaterial, Material newMaterial){
+        ItemStack newItem = new ItemStack(newMaterial);
+        ItemMeta newMeta = newItem.getItemMeta();
+        newMeta.setDisplayName(" ");
+
+        for (int slot = 0; slot < gui.getSize(); slot++) {
+            ItemStack item = gui.getItem(slot);
+            if(item != null && item.getType() == currentMaterial){
+                gui.setItem(slot, newItem);
+            }
+
+        }
+
     }
 }
