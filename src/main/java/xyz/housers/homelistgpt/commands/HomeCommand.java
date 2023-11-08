@@ -10,6 +10,8 @@ import xyz.housers.homelistgpt.HomeListGUI;
 
 import java.util.Map;
 
+import static xyz.housers.homelistgpt.HomeListGUI.openHomeList;
+
 public class HomeCommand implements CommandExecutor {
     private final Map<String, Location> homes;
 
@@ -32,7 +34,7 @@ public class HomeCommand implements CommandExecutor {
         if (args.length == 1 && args[0].equalsIgnoreCase("list")) {
             // The player has used "/home list" command
 
-            xyz.housers.homelistgpt.HomeListGUI.openHomeList(player, xyz.housers.homelistgpt.HomelistGPT.homes);
+            openHomeList(player, xyz.housers.homelistgpt.HomelistGPT.homes);
             player.sendMessage("Opening home list GUI...");
 
             return true; // Exit the command execution
@@ -63,5 +65,6 @@ public class HomeCommand implements CommandExecutor {
         player.sendMessage("Teleported to home '" + homeName + "'.");
 
         return true; // Exit the command execution
+
     }
 }
